@@ -1,0 +1,37 @@
+2022-01-09 21:53:29,613 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2022-01-09 21:53:29,614 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2022-01-09 21:53:29,634 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'describe']
+2022-01-09 21:53:29,641 DEBUG    root            Running [gcloud.sql.instances.describe] with arguments: [INSTANCE: "analog-bot-325915:europe-west1:app-database1"]
+2022-01-09 21:53:29,652 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2022-01-09 21:53:29,654 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-01-09 21:53:29,656 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2022-01-09 21:53:29,656 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2022-01-09 21:53:29,658 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 277
+2022-01-09 21:53:29,685 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2022-01-09 21:53:29,686 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-01-09 21:53:29,687 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2022-01-09 21:53:29,688 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2022-01-09 21:53:29,690 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 277
+2022-01-09 21:53:29,696 DEBUG    root            (gcloud.sql.instances.describe) Instance names cannot contain the ':' character. If you meant to indicate the
+project for [app-database1], use only 'app-database1' for the argument, and either add
+'--project analog-bot-325915' to the command line or first run
+  $ gcloud config set project analog-bot-325915
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 987, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 809, in Run
+    resources = command_instance.Run(args)
+  File "/usr/lib/google-cloud-sdk/lib/surface/sql/instances/describe.py", line 83, in Run
+    validate.ValidateInstanceName(args.instance)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/validate.py", line 37, in ValidateInstanceName
+    """.format(project=possible_project, instance=possible_instance))
+googlecloudsdk.api_lib.sql.exceptions.ArgumentError: Instance names cannot contain the ':' character. If you meant to indicate the
+project for [app-database1], use only 'app-database1' for the argument, and either add
+'--project analog-bot-325915' to the command line or first run
+  $ gcloud config set project analog-bot-325915
+
+2022-01-09 21:53:29,697 ERROR    root            (gcloud.sql.instances.describe) Instance names cannot contain the ':' character. If you meant to indicate the
+project for [app-database1], use only 'app-database1' for the argument, and either add
+'--project analog-bot-325915' to the command line or first run
+  $ gcloud config set project analog-bot-325915
+

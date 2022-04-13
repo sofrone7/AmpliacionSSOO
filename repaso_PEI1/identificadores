@@ -1,0 +1,18 @@
+#!/usr/bin/bash
+
+for iden in $*
+do
+	if test -f $iden
+	then
+		echo - $iden es un fichero
+		if test -w $iden
+		then 	
+			echo - además tenemos permiso de escitura
+		fi
+	elif test -d $iden
+	then
+		echo - $iden es un directorio y su tamaño es $(du -s $iden | cut -f1)
+	else
+		echo - $iden no es un fichero
+	fi
+done

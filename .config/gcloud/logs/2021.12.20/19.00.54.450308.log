@@ -1,0 +1,25 @@
+2021-12-20 19:00:54,451 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2021-12-20 19:00:54,471 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'connect']
+2021-12-20 19:00:54,477 DEBUG    root            Running [gcloud.sql.connect] with arguments: [--user: "postgres", INSTANCE: "app-database"]
+2021-12-20 19:00:54,488 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2021-12-20 19:00:54,491 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-12-20 19:00:54,493 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2021-12-20 19:00:54,493 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2021-12-20 19:00:54,496 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 269
+2021-12-20 19:00:54,526 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2021-12-20 19:00:54,527 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-12-20 19:00:54,529 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2021-12-20 19:00:54,529 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2021-12-20 19:00:54,532 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 269
+2021-12-20 19:00:54,543 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2021-12-20 19:00:54,658 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/instances/app-database?alt=json HTTP/1.1" 200 None
+2021-12-20 19:00:55,373 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "PATCH /sql/v1beta4/projects/analog-bot-325915/instances/app-database?alt=json HTTP/1.1" 200 None
+2021-12-20 19:00:55,375 INFO     ___FILE_ONLY___ Allowlisting your IP for incoming connection for 5 minutes...
+2021-12-20 19:00:56,424 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/operations/05333a2f-9ab4-4cbe-ac9b-9a9435159d2c?alt=json HTTP/1.1" 200 None
+2021-12-20 19:00:58,564 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/operations/05333a2f-9ab4-4cbe-ac9b-9a9435159d2c?alt=json HTTP/1.1" 200 None
+2021-12-20 19:01:02,964 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/operations/05333a2f-9ab4-4cbe-ac9b-9a9435159d2c?alt=json HTTP/1.1" 200 None
+2021-12-20 19:01:11,519 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/operations/05333a2f-9ab4-4cbe-ac9b-9a9435159d2c?alt=json HTTP/1.1" 200 None
+2021-12-20 19:01:27,935 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/operations/05333a2f-9ab4-4cbe-ac9b-9a9435159d2c?alt=json HTTP/1.1" 200 None
+2021-12-20 19:01:28,000 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/instances/app-database?alt=json HTTP/1.1" 200 None
+2021-12-20 19:01:28,003 INFO     ___FILE_ONLY___ Connecting to database with SQL user [postgres].
+2021-12-20 19:01:28,003 DEBUG    root            Executing command: ['psql', '-h', '34.78.105.128', '-U', 'postgres', '-W']

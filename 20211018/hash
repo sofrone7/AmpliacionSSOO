@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+x=0
+INICIO=$(date +%s)
+
+while true
+do
+	x=$(expr $x + 1) 
+		
+	if echo HolaMundo-$x | sha256sum | grep ^000
+	then
+		FIN=$(date +%s)
+		echo número $x tardó $(expr $FIN - $INICIO)
+		INICIO=$(date +%s)
+	fi
+done
+	

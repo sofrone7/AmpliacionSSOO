@@ -1,0 +1,30 @@
+#si existe el archivo secreto.txt entonces el secreto se toma
+#de dentro del archivo, en caso contrario se genera aleatoriamente
+
+if test -e secreto1.txt
+then
+	x=$(cat secreto1.txt)
+else
+	x=$(expr $RANDOM % 10)
+fi
+echo $x
+
+echo Dime un número entre 0 y 10
+read y
+echo leido $y
+
+while test $x != $y
+do
+	if test $x -gt $y
+	then
+		echo el número es mayor que $y 
+	else
+		echo el número es menor que $y
+	fi
+		echo Prueba otra vez
+		read y
+done
+echo "Correcto!"
+	
+
+

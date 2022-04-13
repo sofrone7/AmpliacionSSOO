@@ -1,0 +1,86 @@
+2021-12-20 18:39:38,488 DEBUG    root            Loaded Command Group: ['gcloud', 'sql']
+2021-12-20 18:39:38,494 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances']
+2021-12-20 18:39:38,536 DEBUG    root            Loaded Command Group: ['gcloud', 'sql', 'instances', 'list']
+2021-12-20 18:39:38,543 DEBUG    root            Running [gcloud.sql.instances.list] with arguments: []
+2021-12-20 18:39:38,554 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2021-12-20 18:39:38,556 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-12-20 18:39:38,558 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 196
+2021-12-20 18:39:38,559 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2021-12-20 18:39:38,561 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 267
+2021-12-20 18:39:38,591 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2021-12-20 18:39:38,592 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2021-12-20 18:39:38,594 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 196
+2021-12-20 18:39:38,594 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2021-12-20 18:39:38,596 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 267
+2021-12-20 18:39:38,608 INFO     root            Display format: ":(settings.userLabels:alias=labels:label=LABELS) table(name,databaseVersion,firstof(gceZone,region):label=LOCATION,settings.tier,ip_addresses.filter("type:PRIMARY").*extract(ip_address).flatten().yesno(no="-"):label=PRIMARY_ADDRESS,ip_addresses.filter("type:PRIVATE").*extract(ip_address).flatten().yesno(no="-"):label=PRIVATE_ADDRESS,state:label=STATUS)"
+2021-12-20 18:39:38,611 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): sqladmin.googleapis.com:443
+2021-12-20 18:39:38,652 DEBUG    urllib3.connectionpool https://sqladmin.googleapis.com:443 "GET /sql/v1beta4/projects/analog-bot-325915/instances?alt=json&maxResults=100 HTTP/1.1" 403 None
+2021-12-20 18:39:38,662 DEBUG    root            (gcloud.sql.instances.list) User [712862630822-compute@developer.gserviceaccount.com] does not have permission to access projects instance [analog-bot-325915] (or it may not exist): Request had insufficient authentication scopes.
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    method: google.cloud.sql.v1beta4.SqlInstancesService.List
+    service: sqladmin.googleapis.com
+  reason: ACCESS_TOKEN_SCOPE_INSUFFICIENT
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.
+Traceback (most recent call last):
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 987, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 811, in Run
+    display_info=self.ai.display_info).Display()
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/calliope/display.py", line 483, in Display
+    self._printer.Print(self._resources)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/core/resource/resource_printer_base.py", line 297, in Print
+    for resource in resources:
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/api_lib/sql/instances.py", line 236, in YieldInstancesWithAModifiedState
+    for result in yielded:
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/list_pager.py", line 121, in YieldFromList
+    global_params=global_params)
+  File "/usr/lib/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/sqladmin/v1beta4/sqladmin_v1beta4_client.py", line 687, in List
+    config, request, global_params=global_params)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 737, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 743, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+  File "/usr/bin/../lib/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 610, in __ProcessHttpResponse
+    http_response, method_config=method_config, request=request)
+apitools.base.py.exceptions.HttpForbiddenError: HttpError accessing <https://sqladmin.googleapis.com/sql/v1beta4/projects/analog-bot-325915/instances?alt=json&maxResults=100>: response: <{'www-authenticate': 'Bearer realm="https://accounts.google.com/", error="insufficient_scope", scope="https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/sqlservice.admin"', 'vary': 'Origin, X-Origin, Referer', 'content-type': 'application/json; charset=UTF-8', 'content-encoding': 'gzip', 'date': 'Mon, 20 Dec 2021 18:39:38 GMT', 'server': 'ESF', 'cache-control': 'private', 'x-xss-protection': '0', 'x-frame-options': 'SAMEORIGIN', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'status': 403}>, content <{
+  "error": {
+    "code": 403,
+    "message": "Request had insufficient authentication scopes.",
+    "errors": [
+      {
+        "message": "Insufficient Permission",
+        "domain": "global",
+        "reason": "insufficientPermissions"
+      }
+    ],
+    "status": "PERMISSION_DENIED",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "ACCESS_TOKEN_SCOPE_INSUFFICIENT",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "sqladmin.googleapis.com",
+          "method": "google.cloud.sql.v1beta4.SqlInstancesService.List"
+        }
+      }
+    ]
+  }
+}
+>
+2021-12-20 18:39:38,673 ERROR    root            (gcloud.sql.instances.list) User [712862630822-compute@developer.gserviceaccount.com] does not have permission to access projects instance [analog-bot-325915] (or it may not exist): Request had insufficient authentication scopes.
+- '@type': type.googleapis.com/google.rpc.ErrorInfo
+  domain: googleapis.com
+  metadata:
+    method: google.cloud.sql.v1beta4.SqlInstancesService.List
+    service: sqladmin.googleapis.com
+  reason: ACCESS_TOKEN_SCOPE_INSUFFICIENT
+
+If you are in a compute engine VM, it is likely that the specified scopes during VM creation are not enough to run this command.
+See https://cloud.google.com/compute/docs/access/service-accounts#accesscopesiam for more information about access scopes.
+See https://cloud.google.com/compute/docs/access/create-enable-service-accounts-for-instances#changeserviceaccountandscopes for how to update access scopes of the VM.

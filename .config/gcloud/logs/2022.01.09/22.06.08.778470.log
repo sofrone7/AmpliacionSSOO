@@ -1,0 +1,37 @@
+2022-01-09 22:06:08,781 DEBUG    root            Loaded Command Group: ['gcloud', 'config']
+2022-01-09 22:06:08,786 DEBUG    root            Loaded Command Group: ['gcloud', 'config', 'config_helper']
+2022-01-09 22:06:08,789 DEBUG    root            Running [gcloud.config.config-helper] with arguments: [--format: "json", --min-expiry: "3600"]
+2022-01-09 22:06:08,806 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2022-01-09 22:06:08,809 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-01-09 22:06:08,812 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2022-01-09 22:06:08,813 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2022-01-09 22:06:08,815 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 270
+2022-01-09 22:06:08,838 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2022-01-09 22:06:08,839 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-01-09 22:06:08,841 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2022-01-09 22:06:08,842 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token?scopes=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevstorage.full_control%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Flogging.write%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fmonitoring.write%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fservice.management.readonly%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fservicecontrol%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fsqlservice.admin%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Ftrace.append
+2022-01-09 22:06:08,846 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token?scopes=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fdevstorage.full_control%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Flogging.write%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fmonitoring.write%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fservice.management.readonly%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fservicecontrol%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Fsqlservice.admin%2Chttps%3A%2F%2Fwww.googleapis.com%2Fauth%2Ftrace.append HTTP/1.1" 200 270
+2022-01-09 22:06:08,857 INFO     root            Display format: "default json"
+2022-01-09 22:06:08,857 INFO     ___FILE_ONLY___ {
+  "configuration": {
+    "active_configuration": "default",
+    "properties": {
+      "core": {
+        "account": "712862630822-compute@developer.gserviceaccount.com",
+        "disable_usage_reporting": "True",
+        "project": "analog-bot-325915"
+      }
+    }
+  },
+  "credential": {
+    "access_token": "ya29.c.b0AXv0zTMdWvrIVmKor5X4W6BUjEUMU2msuJ3I-Loui0y4C7IvJVGQ0qjARBqbVEKVvrC27jju13hnYmjnRsT2E0FNd_tJfbHqZDytyA5mXiGWFALq_bM0-1VM4tKj-eDQLKtGmCL3B7v6K2SXlp8JNPy8XN2Iyt5O1F78-SKeC7n1vZ98z1ZEjxCHLsDDLR5fNzgVrELJDNvYy9lvcK5Ge-JoZQ",
+    "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjMzZmY1YWYxMmQ3NjY2YzU4Zjk5NTZlNjVlNDZjOWMwMmVmOGU3NDIiLCJ0eXAiOiJKV1QifQ.eyJhdWQiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF6cCI6IjExNTQzNDg1NjY4NDkxNTQyOTIxOSIsImV4cCI6MTY0MTc2OTU2OCwiaWF0IjoxNjQxNzY1OTY4LCJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJzdWIiOiIxMTU0MzQ4NTY2ODQ5MTU0MjkyMTkifQ.BAM8sx3nPyJFy3g0rYMQ8ZMqCN9awdy_HzkWeyGRlVBO_x5UTCaIRS4oqHuzPQP9W4RVu7ItlaJ_kV1SCocmEUeziJtrvBOrCOgxszKXVzpJiPkPl6wVadD9dzU0XOvhilwpT7bCubRhdSdv1YbbYuoSzuOt7-UnDg3AXa1V3456QfRoLEQ9aG-MzZG17G2Jleql044AGhuP4Mj81_DvngPXiXTgOWoqzCSx3HxVel6RZo39Vs4x-i8S6BWSpSXXL3xts73QcYamegoC_uPLbL6P94-t9ZBMtONczh3pSbDdXo5KHcMkgAha4Q0Rt7FUPs3odpZxIv5z6xiBJKsmag",
+    "token_expiry": "2022-01-09T23:05:53Z"
+  },
+  "sentinels": {
+    "config_sentinel": "/home/silviu/.config/gcloud/config_sentinel"
+  }
+}
+2022-01-09 22:06:08,857 INFO     ___FILE_ONLY___ 
+
+2022-01-09 22:06:08,858 DEBUG    root            SDK update checks are disabled.

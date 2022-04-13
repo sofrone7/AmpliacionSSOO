@@ -1,0 +1,16 @@
+2022-01-07 12:11:36,065 DEBUG    root            Loaded Command Group: ['gcloud', 'auth']
+2022-01-07 12:11:36,073 DEBUG    root            Loaded Command Group: ['gcloud', 'auth', 'docker_helper']
+2022-01-07 12:11:36,075 DEBUG    root            Running [gcloud.auth.docker-helper] with arguments: [METHOD: "get"]
+2022-01-07 12:11:36,095 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true
+2022-01-07 12:11:36,099 DEBUG    urllib3.connectionpool Starting new HTTP connection (1): metadata.google.internal:80
+2022-01-07 12:11:36,101 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/?recursive=true HTTP/1.1" 200 207
+2022-01-07 12:11:36,102 DEBUG    google.auth.transport.requests Making request: GET http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token
+2022-01-07 12:11:36,105 DEBUG    urllib3.connectionpool http://metadata.google.internal:80 "GET /computeMetadata/v1/instance/service-accounts/712862630822-compute@developer.gserviceaccount.com/token HTTP/1.1" 200 269
+2022-01-07 12:11:36,134 INFO     root            Display format: "json"
+2022-01-07 12:11:36,135 INFO     ___FILE_ONLY___ {
+  "Secret": "ya29.c.b0AXv0zTMQPWtBVyQWJdNFo7GfYLcHUqyamHQ1dMRdqmb9y0QCpgBywZr7N0LovvJnNNlEbj7QIpaIEuU7acH4xJA-_AKw05oA2GBsGt0WhBx2Edi6IF2SPrfxKgPD9dmF_4Zhix9E_PMWesqSGDPWgI0MduY3RRvnv6ZR434Uh4JCjwpx6jT03MpzvlK0ZpfyMtjndlWJBvhZZtn4Zlv4y8WWnw",
+  "Username": "_dcgcloud_token"
+}
+2022-01-07 12:11:36,135 INFO     ___FILE_ONLY___ 
+
+2022-01-07 12:11:36,135 DEBUG    root            SDK update checks are disabled.
